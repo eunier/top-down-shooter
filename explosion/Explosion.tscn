@@ -9,7 +9,6 @@
 [ext_resource path="res://art/shootHit/hit_0007.png" type="Texture" id=7]
 [ext_resource path="res://art/shootHit/hit_0008.png" type="Texture" id=8]
 [ext_resource path="res://art/shootHit/hit_0002.png" type="Texture" id=9]
-[ext_resource path="res://explosion/Explosion.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,7 +18,15 @@ animations = [ {
 "speed": 40.0
 } ]
 
+[sub_resource type="GDScript" id=2]
+script/source = "extends AnimatedSprite
+
+func _on_Explosion_animation_finished():
+	queue_free()
+"
+
 [node name="Explosion" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "hit"
-script = ExtResource( 10 )
+script = SubResource( 2 )
+[connection signal="animation_finished" from="." to="." method="_on_Explosion_animation_finished"]

@@ -11,6 +11,4 @@ func show_hit(location):
 	add_child(explosion_instance)
 	explosion_instance.set_offset(location)
 	explosion_instance.play("hit")
-	
-
 

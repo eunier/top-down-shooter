@@ -22,6 +22,8 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
+	if Input.is_action_pressed("mouse_left_click"):
+		shoot()
 	
 	velocity = velocity.normalized() * speed
 	

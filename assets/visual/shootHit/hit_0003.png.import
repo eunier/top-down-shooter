@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hit_0008.png-44513c2ac3be84e82d96fccb0bb75a7c.stex"
+path="res://.import/hit_0003.png-6628dff9208075502ef3cee29a1bec94.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/shootHit/hit_0008.png"
-dest_files=[ "res://.import/hit_0008.png-44513c2ac3be84e82d96fccb0bb75a7c.stex" ]
+source_file="res://assets/visual/shootHit/hit_0003.png"
+dest_files=[ "res://.import/hit_0003.png-6628dff9208075502ef3cee29a1bec94.stex" ]
 
 [params]
 

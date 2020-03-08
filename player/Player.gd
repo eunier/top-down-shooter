@@ -37,3 +37,8 @@ func _physics_process(delta):
 func shoot():
 	if $ShootRayCast2D.is_colliding():
 		emit_signal("hit", $ShootRayCast2D.get_collision_point())
+		
+	$AudioStreamPlayer2D.play()
+
+func _on_AudioStreamPlayer2D_finished():
+	$AudioStreamPlayer2D.stop()

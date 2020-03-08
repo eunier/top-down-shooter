@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal hit
+
 export (int) var speed = 4
 
 var velocity = Vector2()
@@ -29,3 +31,7 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_collide(velocity)
+
+func shoot():
+	if $ShootRayCast2D.is_colliding():
+		emit_signal("hit", $ShootRayCast2D.get_collision_point())

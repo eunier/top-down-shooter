@@ -35,10 +35,17 @@ func _physics_process(delta):
 	velocity = move_and_collide(velocity)
 
 func shoot():
-	if $ShootRayCast2D.is_colliding():
-		emit_signal("hit", $ShootRayCast2D.get_collision_point())
+	if $Timer.is_stopped():
+		$Timer.start()
 		
-	$AudioStreamPlayer2D.play()
+		if $ShootRayCast2D.is_colliding():
+			emit_signal("hit", $ShootRayCast2D.get_collision_point())
+		
+		$AudioStreamPlayer2D.play()
 
 func _on_AudioStreamPlayer2D_finished():
-	$AudioStreamPlayer2D.stop()
+	pass
+
+
+func _on_Timer_timeout():
+	$Timer.stop()
